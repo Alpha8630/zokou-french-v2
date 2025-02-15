@@ -1,0 +1,43 @@
+Nom.: Node.js CI
+
+Sur...:
+  Pousser. :
+  branches.:
+     Principes  
+ pull_request.pull_request.:
+ branches. :
+ - Principales
+  Calendrier. :
+ - Cron.: '0 */4 * * *'
+
+Emplois.:
+  Construire. :
+
+      runs-on  : Ubuntu-Latest.
+
+    Stratégie.   stratégie    :
+        matrix  :
+ Node-version. : [20.x]
+
+  Étapes. :
+ - Nom.: Dépôt de paiement.
+  Utilisations. : actions/checkout@v3
+
+ - Nom.: Configurer Node.js
+  Utilisations. : actions/setup-node@v3
+  avec :
+ Node-version. : ${{   matrix.node-version   }}
+
+ - Nom.: Installateur ffmpeg.
+  courir. : |
+  SUDO apt-get mise à jour.  
+ sudo apt-get install -y ffmpeg 
+
+ - Nom.: Installer des dépendances.
+  courir. : |
+ NPM Install - G PM2 
+ NPM Install. 
+
+ - Nom.: Démarrer l 'application avec Timeout.   
+  courir. : |
+ Timeout 14520s NPM Run Zokou 
